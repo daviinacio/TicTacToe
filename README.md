@@ -1,4 +1,4 @@
-# TIC TAC TOP
+# TIC TAC TOE
 ## Trabalho de Programação de Dispositivos Móveis - Estácio 2019.3
 #### daviinacio 20/11/2019
 
@@ -17,3 +17,6 @@ puzzel ou players.
         - [ ] protótipo das telas da aplicação em papel ou ferramenta automatizada.
     - O projeto e o protótipo devem ser validados pelo professor antes de iniciar a implementação.
 - [ ] Implementação do Projeto
+
+## Adicional
+- [ ] Implementar um ContentProvider com os resultados
