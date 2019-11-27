@@ -23,7 +23,7 @@ puzzel ou players.
 - [ ] Implementação do Projeto
     - Domínios
         - [ ] Player
-        - [ ] ScoreBoard
+        - [x] ScoreBoard
     - [ ] Banco de dados com os placares
     - Implementação das Activities
         - [ ] MainActivity
