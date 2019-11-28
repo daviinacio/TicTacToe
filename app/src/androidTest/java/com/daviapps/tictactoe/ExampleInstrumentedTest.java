@@ -1,4 +1,4 @@
-package com.daviapps.tictactop;
+package com.daviapps.tictactoe;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;
@@ -21,6 +21,6 @@ public class ExampleInstrumentedTest {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getTargetContext();
 
-        assertEquals("com.daviapps.tictactop", appContext.getPackageName());
+        assertEquals("com.daviapps.tictactoe", appContext.getPackageName());
     }
 }

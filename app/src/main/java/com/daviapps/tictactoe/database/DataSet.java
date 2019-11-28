@@ -1,4 +1,4 @@
-package com.daviapps.tictactop.database;
+package com.daviapps.tictactoe.database;
 
 import java.text.SimpleDateFormat;
 import java.util.List;

@@ -1,4 +1,4 @@
-package com.daviapps.tictactop.database;
+package com.daviapps.tictactoe.database;
 
 import android.content.ContentValues;
 import android.content.Context;
@@ -8,12 +8,11 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteException;
 import android.database.sqlite.SQLiteOpenHelper;
 
-import com.daviapps.tictactop.dialogs.ErrorDialog;
-import com.daviapps.tictactop.domain.ScoreBoard;
+import com.daviapps.tictactoe.dialogs.ErrorDialog;
+import com.daviapps.tictactoe.domain.ScoreBoard;
 
 import java.text.ParseException;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 // Created by daviinacio on 26/11/2019.

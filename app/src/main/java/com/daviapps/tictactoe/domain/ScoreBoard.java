@@ -1,6 +1,6 @@
-package com.daviapps.tictactop.domain;
+package com.daviapps.tictactoe.domain;
 
-import com.daviapps.tictactop.database.DataSet;
+import com.daviapps.tictactoe.database.DataSet;
 
 import java.util.Date;
 

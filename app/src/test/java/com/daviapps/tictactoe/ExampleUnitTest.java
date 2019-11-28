@@ -1,4 +1,4 @@
-package com.daviapps.tictactop;
+package com.daviapps.tictactoe;
 
 import org.junit.Test;
 

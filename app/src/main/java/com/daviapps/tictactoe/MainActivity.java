@@ -1,11 +1,9 @@
-package com.daviapps.tictactop;
+package com.daviapps.tictactoe;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.Toast;
 
-import com.daviapps.tictactop.database.ScoreboardDAO;
-import com.daviapps.tictactop.domain.ScoreBoard;
 import com.google.android.gms.ads.AdListener;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;

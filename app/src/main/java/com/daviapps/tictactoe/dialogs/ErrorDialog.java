@@ -1,4 +1,4 @@
-package com.daviapps.tictactop.dialogs;
+package com.daviapps.tictactoe.dialogs;
 
 import android.content.Context;
 import android.support.v7.app.AlertDialog;
