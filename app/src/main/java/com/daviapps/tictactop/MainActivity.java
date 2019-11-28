@@ -6,44 +6,47 @@ import android.widget.Toast;
 
 import com.daviapps.tictactop.database.ScoreboardDAO;
 import com.daviapps.tictactop.domain.ScoreBoard;
+import com.google.android.gms.ads.AdListener;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
+import com.google.android.gms.ads.MobileAds;
 
 public class MainActivity extends AppCompatActivity {
-    ScoreboardDAO scoreDB;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        this.scoreDB = new ScoreboardDAO(this);
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
+        getSupportActionBar().setLogo(R.drawable.ic_launcher_spaced);
+        getSupportActionBar().setDisplayUseLogoEnabled(true);
 
-        ScoreBoard score = new ScoreBoard();
-        score.incrementScore1();
-        score.incrementScore1();
+        /*	*	*	*	  AdMob    *   Admob   *  Admob 	*	*	*	*/
 
-        score.incrementScore2();
+        MobileAds.initialize(this, getString(R.string.admob_app_id));
 
-        score.incrementTie();
-        score.incrementTie();
-        score.incrementTie();
+        AdView adView = findViewById(R.id.adView);
 
-        score = scoreDB.insert(score);
+        adView.setAdListener(new AdListener(){
+            @Override
+            public void onAdLoaded(){
+                Toast.makeText(MainActivity.this, "Admob: loaded", Toast.LENGTH_SHORT).show();
+            }
 
-        Toast.makeText(this, score.toString(), Toast.LENGTH_LONG).show();
-        Toast.makeText(this, "Length: " + scoreDB.count("1 = 1"), Toast.LENGTH_LONG).show();
+            @Override
+            public void onAdFailedToLoad(int p1){
+                Toast.makeText(MainActivity.this, "AdMob: Fail to load (" + p1 + ")", Toast.LENGTH_SHORT).show();
+            }
+        });
 
-        score.incrementScore1();
-        score.incrementScore1();
+        AdRequest adRequest = new AdRequest.Builder()
+                .addTestDevice(AdRequest.DEVICE_ID_EMULATOR)
+                .addTestDevice("A4DDF5EC5E81FE0D117CA05BA164E8B8") // LG K10
+                .addTestDevice("B32DF5960E16B6E638F0861FB8E63372") // LG G6
+                .build();
 
-        score.incrementScore2();
-
-        score.incrementTie();
-        score.incrementTie();
-        score.incrementTie();
-
-        scoreDB.update(score);
-
-        Toast.makeText(this, score.toString(), Toast.LENGTH_LONG).show();
+        adView.loadAd(adRequest);
 
     }
 }

@@ -1,4 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Jogo da velha</string>
+    <string name="app_copyright">criado por daviinacio</string>
+
+    <string name="main_player_vs_machine">Jogador vs. Máquina</string>
+    <string name="main_player_vs_player">Jogador vs. Jogador</string>
+
+    <string name="scoreboard">Placares</string>
+    <string name="settings">Configurações</string>
+    <string name="version">Versão</string>
 </resources>

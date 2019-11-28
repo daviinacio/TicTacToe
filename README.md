@@ -10,8 +10,8 @@ aplicativo móvel simples voltados para a área de entretendimento como jogos do
 puzzel ou players.
 
 ## Desenvolvimento
-- [ ] Pesquisa sobre aplicações Android similares ao tema apresentado pelo professor
-- [ ] Elaboração do Protótipo e Projeto
+- [x] Pesquisa sobre aplicações Android similares ao tema apresentado pelo professor
+- [x] Elaboração do Protótipo e Projeto
     - Elaboração do projeto composto por: [Protótipo](/prototype)
         - [x] diagrama de navegação
         - [x] protótipo das telas da aplicação em papel ou ferramenta automatizada.
@@ -24,13 +24,17 @@ puzzel ou players.
     - Domínios
         - [ ] Player
         - [x] ScoreBoard
-    - [ ] Banco de dados com os placares
+    - [x] Banco de dados com os placares
     - Implementação das Activities
-        - [ ] MainActivity
+        - [x] MainActivity
         - [ ] ScoreboardActivity
         - [ ] DifficultyActivity
         - [ ] GameActivity
     - [ ] Implementar lógica de dificuldade
+    - Images vetoriais
+        - [x] Icone do aplicativo
+        - [x] "Jogo da velha"
 
 ## Adicional
+- [x] Blocos de anúncio com admob
 - [ ] Implementar um ContentProvider com os resultados

@@ -1,9 +1,143 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:ads="http://schemas.android.com/apk/res-auto"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
+
+    <android.support.constraint.Guideline
+        android:id="@+id/guideline2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        ads:layout_constraintGuide_percent="0.06326034" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/guideline4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        ads:layout_constraintGuide_percent="0.05" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/guideline5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        ads:layout_constraintGuide_percent="0.94" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/guideline6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        ads:layout_constraintGuide_percent="0.8" />
+
+    <com.google.android.gms.ads.AdView
+        android:id="@+id/adView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        ads:layout_constraintEnd_toEndOf="parent"
+        ads:layout_constraintStart_toStartOf="parent"
+        app:adSize="BANNER"
+        app:adUnitId="ca-app-pub-1507172442893539/1803704907"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+    </com.google.android.gms.ads.AdView>
+
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="250dp"
+        android:layout_height="182dp"
+        android:contentDescription="@string/app_name"
+        ads:layout_constraintEnd_toStartOf="@+id/guideline5"
+        ads:layout_constraintStart_toStartOf="@+id/guideline2"
+        ads:layout_constraintTop_toTopOf="@+id/guideline4"
+        ads:srcCompat="@drawable/ic_tictactoe" />
+
+    <Button
+        android:id="@+id/button"
+        style="@style/AppTheme_Button_Primary"
+        android:layout_width="0dp"
+        android:text="@string/main_player_vs_machine"
+        ads:layout_constraintBottom_toTopOf="@+id/button2"
+        ads:layout_constraintEnd_toStartOf="@+id/guideline5"
+        ads:layout_constraintHorizontal_bias="0.5"
+        ads:layout_constraintStart_toStartOf="@+id/guideline2"
+        ads:layout_constraintTop_toBottomOf="@+id/imageView" />
+
+    <Button
+        android:id="@+id/button2"
+        style="@style/AppTheme_Button_Primary"
+        android:layout_width="0dp"
+        android:text="@string/main_player_vs_player"
+        ads:layout_constraintBottom_toTopOf="@+id/button4"
+        ads:layout_constraintEnd_toStartOf="@+id/guideline5"
+        ads:layout_constraintHorizontal_bias="0.5"
+        ads:layout_constraintStart_toStartOf="@+id/guideline2"
+        ads:layout_constraintTop_toBottomOf="@+id/button" />
+
+    <Button
+        android:id="@+id/button4"
+        style="@style/AppTheme_Button_Secondary"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/settings"
+        ads:layout_constraintBottom_toBottomOf="@+id/button5"
+        ads:layout_constraintEnd_toStartOf="@+id/guideline5"
+        ads:layout_constraintHorizontal_bias="0.5"
+        ads:layout_constraintStart_toEndOf="@+id/button5"
+        ads:layout_constraintTop_toTopOf="@+id/button5" />
+
+    <Button
+        android:id="@+id/button5"
+        style="@style/AppTheme_Button_Secondary"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/scoreboard"
+        ads:layout_constraintBottom_toTopOf="@+id/guideline6"
+        ads:layout_constraintEnd_toStartOf="@+id/button4"
+        ads:layout_constraintHorizontal_bias="0.5"
+        ads:layout_constraintStart_toStartOf="@+id/guideline2"
+        ads:layout_constraintTop_toBottomOf="@+id/button2"
+        ads:layout_constraintVertical_bias="1.0" />
+
+    <TextView
+        android:id="@+id/textView"
+        style="@style/AppTheme_TextView_Footer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:text="@string/app_copyright"
+        ads:layout_constraintBottom_toTopOf="@+id/adView"
+        ads:layout_constraintStart_toStartOf="@+id/guideline2" />
+
+    <TextView
+        android:id="@+id/textView2"
+        style="@style/AppTheme_TextView_Footer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/app_version"
+        ads:layout_constraintBottom_toBottomOf="@+id/textView3"
+        ads:layout_constraintEnd_toStartOf="@+id/guideline5"
+        ads:layout_constraintTop_toTopOf="@+id/textView3" />
+
+    <TextView
+        android:id="@+id/textView3"
+        style="@style/AppTheme_TextView_Footer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="8dp"
+        android:text="@string/version"
+        ads:layout_constraintBottom_toTopOf="@+id/adView"
+        ads:layout_constraintEnd_toStartOf="@+id/textView2" />
+
 
 </android.support.constraint.ConstraintLayout>
