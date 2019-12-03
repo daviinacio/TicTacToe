@@ -4,7 +4,53 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".DifficultyActivity">
+
+    <Button
+        android:id="@+id/btn_back"
+        style="@style/AppTheme_Button_Secondary"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:onClick="goBack"
+        android:text="@string/back"
+        app:layout_constraintBottom_toTopOf="@+id/guideline6"
+        app:layout_constraintEnd_toStartOf="@+id/guideline5"
+        app:layout_constraintStart_toStartOf="@+id/guideline2" />
+
+    <Button
+        android:id="@+id/btn_diff_easy"
+        style="@style/AppTheme_Button_Primary"
+        android:layout_width="0dp"
+        android:layout_marginTop="32dp"
+        android:onClick="chooseDifficult"
+        android:text="@string/easy"
+        app:layout_constraintBottom_toTopOf="@+id/btn_diff_medium"
+        app:layout_constraintEnd_toStartOf="@+id/guideline5"
+        app:layout_constraintStart_toStartOf="@+id/guideline2"
+        app:layout_constraintTop_toBottomOf="@+id/imageView"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <Button
+        android:id="@+id/btn_diff_medium"
+        style="@style/AppTheme_Button_Primary"
+        android:layout_width="0dp"
+        android:onClick="chooseDifficult"
+        android:text="@string/medium"
+        app:layout_constraintBottom_toTopOf="@+id/btn_diff_hard"
+        app:layout_constraintEnd_toStartOf="@+id/guideline5"
+        app:layout_constraintStart_toStartOf="@+id/guideline2"
+        app:layout_constraintTop_toBottomOf="@+id/btn_diff_easy" />
+
+    <Button
+        android:id="@+id/btn_diff_hard"
+        style="@style/AppTheme_Button_Primary"
+        android:layout_width="0dp"
+        android:onClick="chooseDifficult"
+        android:text="@string/hard"
+        app:layout_constraintBottom_toTopOf="@+id/btn_back"
+        app:layout_constraintEnd_toStartOf="@+id/guideline5"
+        app:layout_constraintStart_toStartOf="@+id/guideline2"
+        app:layout_constraintTop_toBottomOf="@+id/btn_diff_medium" />
 
     <android.support.constraint.Guideline
         android:id="@+id/guideline2"
@@ -40,14 +86,13 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
         app:adSize="BANNER"
-        app:adUnitId="ca-app-pub-1507172442893539/1803704907"
-        app:layout_constraintBottom_toBottomOf="parent">
+        app:adUnitId="ca-app-pub-1507172442893539/9292641677"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
 
     </com.google.android.gms.ads.AdView>
-
 
     <ImageView
         android:id="@+id/imageView"
@@ -58,53 +103,6 @@
         app:layout_constraintStart_toStartOf="@+id/guideline2"
         app:layout_constraintTop_toTopOf="@+id/guideline4"
         app:srcCompat="@drawable/ic_tictactoe" />
-
-    <Button
-        android:id="@+id/btn_player_vs_machine"
-        style="@style/AppTheme_Button_Primary"
-        android:layout_width="0dp"
-        android:text="@string/main_player_vs_machine"
-        app:layout_constraintBottom_toTopOf="@+id/btn_player_vs_player"
-        app:layout_constraintEnd_toStartOf="@+id/guideline5"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="@+id/guideline2"
-        app:layout_constraintTop_toBottomOf="@+id/imageView" />
-
-    <Button
-        android:id="@+id/btn_player_vs_player"
-        style="@style/AppTheme_Button_Primary"
-        android:layout_width="0dp"
-        android:text="@string/main_player_vs_player"
-        app:layout_constraintBottom_toTopOf="@+id/btn_settings"
-        app:layout_constraintEnd_toStartOf="@+id/guideline5"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="@+id/guideline2"
-        app:layout_constraintTop_toBottomOf="@+id/btn_player_vs_machine" />
-
-    <Button
-        android:id="@+id/btn_settings"
-        style="@style/AppTheme_Button_Secondary"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:text="@string/settings"
-        app:layout_constraintBottom_toBottomOf="@+id/btn_scoreboard"
-        app:layout_constraintEnd_toStartOf="@+id/guideline5"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/btn_scoreboard"
-        app:layout_constraintTop_toTopOf="@+id/btn_scoreboard" />
-
-    <Button
-        android:id="@+id/btn_scoreboard"
-        style="@style/AppTheme_Button_Secondary"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:text="@string/scoreboard"
-        app:layout_constraintBottom_toTopOf="@+id/guideline6"
-        app:layout_constraintEnd_toStartOf="@+id/btn_settings"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="@+id/guideline2"
-        app:layout_constraintTop_toBottomOf="@+id/btn_player_vs_player"
-        app:layout_constraintVertical_bias="1.0" />
 
     <TextView
         android:id="@+id/textView"

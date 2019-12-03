@@ -27,8 +27,8 @@ puzzel ou players.
     - [x] Banco de dados com os placares
     - Implementação das Activities
         - [x] MainActivity
-        - [ ] ScoreboardActivity
         - [ ] DifficultyActivity
+        - [ ] ScoreboardActivity
         - [ ] GameActivity
     - [ ] Implementar lógica de dificuldade
     - Images vetoriais

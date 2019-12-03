@@ -1,14 +1,10 @@
 package com.daviapps.tictactoe;
 
 import android.content.Intent;
-import android.os.Build;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.transition.Explode;
-import android.transition.Slide;
+import android.view.MenuItem;
 import android.view.View;
-import android.view.Window;
-import android.widget.Button;
 import android.widget.Toast;
 
 import com.daviapps.tictactoe.domain.ScoreBoard;
@@ -17,24 +13,12 @@ import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
 import com.google.android.gms.ads.MobileAds;
 
-public class MainActivity extends AppCompatActivity {
-
-    Button btn_pvm, btn_pvp, btn_scoreboard, btn_settings;
+public class DifficultyActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-
-
-        getSupportActionBar().setDisplayShowHomeEnabled(true);
-        getSupportActionBar().setLogo(R.drawable.ic_launcher_spaced);
-        getSupportActionBar().setDisplayUseLogoEnabled(true);
-
-        this.btn_pvm = findViewById(R.id.btn_player_vs_machine);
-        this.btn_pvp = findViewById(R.id.btn_player_vs_player);
-        this.btn_scoreboard = findViewById(R.id.btn_scoreboard);
-        this.btn_settings = findViewById(R.id.btn_settings);
+        setContentView(R.layout.activity_difficulty);
 
         /*	*	*	*	  AdMob    *   Admob   *  Admob 	*	*	*	*/
 
@@ -61,31 +45,51 @@ public class MainActivity extends AppCompatActivity {
                 .build();
 
         adView.loadAd(adRequest);
+    }
 
-        /*	*	*	*	  OnClick   *   OnClick *  OnClick  *	*	*	*/
+    public void chooseDifficult(View v){
+        Intent intent = new Intent(DifficultyActivity.this, GameActivity.class);
 
-        this.btn_pvm.setOnClickListener((v) -> {
-            startActivity(new Intent(MainActivity.this, DifficultyActivity.class));
-            // overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
-        });
+        switch (v.getId()){
+            case R.id.btn_diff_easy:
+                intent.putExtra("difficulty", ScoreBoard.DIFF_EASY);
+                break;
 
-        this.btn_pvp.setOnClickListener((v) -> {
-            Intent intent = new Intent(MainActivity.this, GameActivity.class);
+            case R.id.btn_diff_medium:
+                intent.putExtra("difficulty", ScoreBoard.DIFF_MEDIUM);
+                break;
 
-            // Open as a player vs. player
-            intent.putExtra("difficulty", ScoreBoard.DIFF_PVP);
+            case R.id.btn_diff_hard:
+                intent.putExtra("difficulty", ScoreBoard.DIFF_HARD);
+                break;
+        }
 
+
+        if(intent.hasExtra("difficulty")){
             startActivity(intent);
-        });
+            super.finish();
+        }
+    }
 
-        this.btn_scoreboard.setOnClickListener((v) -> {
+    public void goBack(View v){
+        this.finish();
+    }
 
-        });
+    @Override
+    public void finish() {
+        super.finish();
+        overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right);
+    }
 
-        this.btn_settings.setOnClickListener((v) -> {
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                this.finish();
+                return true;
 
-        });
-
-
+            default:
+                return false;
+        }
     }
 }

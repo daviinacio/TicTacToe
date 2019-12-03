@@ -6,8 +6,11 @@ import java.util.Date;
 
 // Created by daviinacio on 26/11/2019.
 public class ScoreBoard {
+    public static final int DIFF_EASY = 0x01, DIFF_MEDIUM = 0x02, DIFF_HARD = 0x03, DIFF_PVP = 0xff;
+
     private int id;
     private int score1, score2, tie;
+    private int difficulty;
     private Date date;
     private long duringTime;
 
@@ -58,6 +61,13 @@ public class ScoreBoard {
     }
     public void setDate(Date date) {
         this.date = date;
+    }
+
+    public int getDifficulty() {
+        return difficulty;
+    }
+    public void setDifficulty(int difficulty) {
+        this.difficulty = difficulty;
     }
 
     public long getDuringTime() {

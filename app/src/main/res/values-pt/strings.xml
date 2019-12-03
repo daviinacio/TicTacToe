@@ -6,7 +6,13 @@
     <string name="main_player_vs_machine">Jogador vs. Máquina</string>
     <string name="main_player_vs_player">Jogador vs. Jogador</string>
 
+    <string name="activity_difficulty_title">Escolha a sua dificuldade</string>
+
     <string name="scoreboard">Placares</string>
     <string name="settings">Configurações</string>
     <string name="version">Versão</string>
+    <string name="easy">Fácil</string>
+    <string name="medium">Médio</string>
+    <string name="hard">Difícil</string>
+    <string name="back">Voltar</string>
 </resources>
