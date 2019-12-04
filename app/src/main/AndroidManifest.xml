@@ -34,7 +34,8 @@
         <activity
             android:name=".GameActivity"
             android:label="@string/activity_game_title"
-            android:parentActivityName=".MainActivity">
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/AppTheme.NoActionBar">
 
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"

@@ -19,4 +19,7 @@
     <string name="medium">Medium</string>
     <string name="hard">Hard</string>
     <string name="back">Back</string>
+    <string name="you">You</string>
+    <string name="tie">Tie</string>
+    <string name="opponent">Opponent</string>
 </resources>

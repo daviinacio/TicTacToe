@@ -15,4 +15,7 @@
     <string name="medium">Médio</string>
     <string name="hard">Difícil</string>
     <string name="back">Voltar</string>
+    <string name="you">Você</string>
+    <string name="tie">Empate</string>
+    <string name="opponent">Oponente</string>
 </resources>
