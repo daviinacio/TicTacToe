@@ -34,7 +34,7 @@
                 android:layout_marginBottom="8dp"
                 android:text="0"
                 android:textColor="@color/white"
-                android:textSize="90dp"
+                android:textSize="90sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toStartOf="@+id/tv_score_tie"
                 app:layout_constraintStart_toStartOf="parent"
@@ -60,7 +60,7 @@
                 android:layout_marginBottom="8dp"
                 android:text="0"
                 android:textColor="@color/white"
-                android:textSize="90dp"
+                android:textSize="90sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toStartOf="@+id/tv_score_player2"
                 app:layout_constraintHorizontal_bias="0.5"
@@ -87,7 +87,7 @@
                 android:layout_marginBottom="8dp"
                 android:text="0"
                 android:textColor="@color/white"
-                android:textSize="90dp"
+                android:textSize="90sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.5"
@@ -116,119 +116,159 @@
         android:fillViewport="true"
         app:layout_behavior="android.support.design.widget.AppBarLayout$ScrollingViewBehavior">
 
-        <LinearLayout
+        <android.support.constraint.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_gravity="center"
             android:gravity="center"
             android:orientation="vertical">
 
             <LinearLayout
+                android:id="@+id/linearLayout2"
                 android:layout_width="300dp"
                 android:layout_height="300dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginBottom="8dp"
+                android:background="@color/colorAccent"
                 android:orientation="vertical"
                 android:padding="@dimen/game_time_margin"
-                android:background="@color/colorAccent">
+                app:layout_constraintBottom_toTopOf="@+id/adView"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_game_status">
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:orientation="horizontal"
-                    android:layout_weight="1">
+                    android:layout_weight="1"
+                    android:orientation="horizontal">
 
                     <Button
-                        android:id="@+id/button1"
+                        android:id="@+id/btn_tile_1_1"
+                        style="@style/AppTheme_Button_Tiles"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
-                        android:text="X"
-                        style="@style/AppTheme_Button_Tiles"/>
+                        android:text="X" />
 
                     <Button
-                        android:id="@+id/button2"
+                        android:id="@+id/btn_tile_1_2"
+                        style="@style/AppTheme_Button_Tiles"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
-                        android:text="X"
-                        style="@style/AppTheme_Button_Tiles"/>
+                        android:text="O" />
 
                     <Button
-                        android:id="@+id/button3"
+                        android:id="@+id/btn_tile_1_3"
+                        style="@style/AppTheme_Button_Tiles"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
-                        android:text="X"
-                        style="@style/AppTheme_Button_Tiles"/>
+                        android:text="X" />
 
                 </LinearLayout>
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:orientation="horizontal"
-                    android:layout_weight="1">
+                    android:layout_weight="1"
+                    android:orientation="horizontal">
 
                     <Button
-                        android:id="@+id/button4"
+                        android:id="@+id/btn_tile_2_1"
+                        style="@style/AppTheme_Button_Tiles"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
-                        android:text="X"
-                        style="@style/AppTheme_Button_Tiles"/>
+                        android:text="O" />
 
                     <Button
-                        android:id="@+id/button5"
+                        android:id="@+id/btn_tile_2_2"
+                        style="@style/AppTheme_Button_Tiles"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
-                        android:text="X"
-                        style="@style/AppTheme_Button_Tiles"/>
+                        android:text="O" />
 
                     <Button
-                        android:id="@+id/button6"
+                        android:id="@+id/btn_tile_2_3"
+                        style="@style/AppTheme_Button_Tiles"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
-                        android:text="X"
-                        style="@style/AppTheme_Button_Tiles"/>
+                        android:text="X" />
 
                 </LinearLayout>
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:orientation="horizontal"
-                    android:layout_weight="1">
+                    android:layout_weight="1"
+                    android:orientation="horizontal">
 
                     <Button
-                        android:id="@+id/button7"
+                        android:id="@+id/btn_tile_3_1"
+                        style="@style/AppTheme_Button_Tiles"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
-                        android:text="X"
-                        style="@style/AppTheme_Button_Tiles"/>
+                        android:text="O" />
 
                     <Button
-                        android:id="@+id/button8"
+                        android:id="@+id/btn_tile_3_2"
+                        style="@style/AppTheme_Button_Tiles"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
-                        android:text="X"
-                        style="@style/AppTheme_Button_Tiles"/>
+                        android:text="X" />
 
                     <Button
-                        android:id="@+id/button9"
+                        android:id="@+id/btn_tile_3_3"
+                        style="@style/AppTheme_Button_Tiles"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
-                        android:text="X"
-                        style="@style/AppTheme_Button_Tiles"/>
+                        android:text="X" />
 
                 </LinearLayout>
 
             </LinearLayout>
 
-        </LinearLayout>
+            <com.google.android.gms.ads.AdView
+                android:id="@+id/adView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                app:adSize="BANNER"
+                app:adUnitId="ca-app-pub-1507172442893539/7360968126"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent">
+
+            </com.google.android.gms.ads.AdView>
+
+            <TextView
+                android:id="@+id/tv_game_status"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginRight="8dp"
+                android:text="Status"
+                android:textColor="@color/colorAccent"
+                android:textSize="25sp"
+                app:layout_constraintBottom_toTopOf="@+id/linearLayout2"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </android.support.constraint.ConstraintLayout>
 
     </android.support.v4.widget.NestedScrollView>
 

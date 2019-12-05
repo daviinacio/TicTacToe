@@ -8,6 +8,23 @@
 
     <string name="activity_difficulty_title">Escolha a sua dificuldade</string>
 
+    <string name="game_tile_already_marked">Essa opção já foi selecionada!</string>
+
+    <string name="game_your_turn">Sua vez</string>
+    <string name="game_machine_turn">Vez da Máquina</string>
+    <string name="game_player1_turn">Vez de Player1</string>
+    <string name="game_player2_turn">Vez de Player2</string>
+    <string name="game_player_name_turn">Vez de %s</string>
+
+    <string name="game_you_won_turn">Você ganhou a rodada</string>
+    <string name="game_machine_won_turn">A máquina ganhou a rodada</string>
+    <string name="game_player1_won_turn">Player1 ganhou a rodada</string>
+    <string name="game_player2_won_turn">Player2 ganhou a rodada</string>
+    <string name="game_player_name_won_turn">%s ganhou a rodada</string>
+    <string name="game_tie_turn">Deu velha!</string>
+
+    <string name="game_db_inserted">Essa partida foi salva na tabela de placares</string>
+
     <string name="scoreboard">Placares</string>
     <string name="settings">Configurações</string>
     <string name="version">Versão</string>
@@ -18,4 +35,5 @@
     <string name="you">Você</string>
     <string name="tie">Empate</string>
     <string name="opponent">Oponente</string>
+    <string name="machine">Máquina</string>
 </resources>

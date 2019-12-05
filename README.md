@@ -22,14 +22,13 @@ puzzel ou players.
     - O projeto e o protótipo devem ser validados pelo professor antes de iniciar a implementação.
 - [ ] Implementação do Projeto
     - Domínios
-        - [ ] Player
         - [x] ScoreBoard
     - [x] Banco de dados com os placares
     - Implementação das Activities
         - [x] MainActivity
-        - [ ] DifficultyActivity
+        - [x] DifficultyActivity
         - [ ] ScoreboardActivity
-        - [ ] GameActivity
+        - [x] GameActivity
     - [ ] Implementar lógica de dificuldade
     - Images vetoriais
         - [x] Icone do aplicativo

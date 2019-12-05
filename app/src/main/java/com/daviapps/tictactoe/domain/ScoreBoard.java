@@ -2,7 +2,9 @@ package com.daviapps.tictactoe.domain;
 
 import com.daviapps.tictactoe.database.DataSet;
 
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 // Created by daviinacio on 26/11/2019.
 public class ScoreBoard {
@@ -14,12 +16,17 @@ public class ScoreBoard {
     private Date date;
     private long duringTime;
 
+    // Observers
+    private List<Observer> observers;
+
     // Constructors
     public ScoreBoard() {
         this.date = new Date();
+        this.observers = new ArrayList<>();
     }
 
     public ScoreBoard(int id) {
+        this();
         this.id = id;
     }
 
@@ -31,9 +38,11 @@ public class ScoreBoard {
     }
     public void setScore1(int score1) {
         this.score1 = score1;
+        this.handleObserver();
     }
     public int incrementScore1(){
-        return this.score1++;
+        this.setScore1(this.score1 + 1);
+        return this.score1;
     }
 
     public int getScore2() {
@@ -41,9 +50,11 @@ public class ScoreBoard {
     }
     public void setScore2(int score2) {
         this.score2 = score2;
+        this.handleObserver();
     }
     public int incrementScore2(){
-        return this.score2++;
+        this.setScore2(this.score2 + 1);
+        return this.score2;
     }
 
     public int getTie() {
@@ -51,9 +62,11 @@ public class ScoreBoard {
     }
     public void setTie(int tie) {
         this.tie = tie;
+        this.handleObserver();
     }
     public int incrementTie(){
-        return this.tie++;
+        this.setTie(this.tie + 1);
+        return this.tie;
     }
 
     public Date getDate() {
@@ -77,10 +90,27 @@ public class ScoreBoard {
         this.duringTime = duringTime;
     }
 
+    // Observer
+    private void handleObserver(){
+        for(Observer observer : this.observers){
+            observer.onScoreChange(this.score1, this.score2, this.tie);
+        }
+    }
+
+    public void addObserver(Observer observer){
+        if(observer != null){
+            this.observers.add(observer);
+        }
+    }
+
     // Other methods
     @Override
     public String toString() {
         return String.format("ScoreBoard(%s):\nid:\t%s\nscore1:\t%s\nscore2:\t%s\ntie:\t%s\ndate:\t%s\nduring_time:\t%smin",
                 super.toString(), id, score1, score2, tie, DataSet.timeFormat.format(getDate()), (float) duringTime / 60);
+    }
+
+    public interface Observer {
+        void onScoreChange(int score1, int score2, int tie);
     }
 }
