@@ -8,6 +8,7 @@
     <string name="main_player_vs_machine">Player vs. Machine</string>
     <string name="main_player_vs_player">Player vs. Player</string>
 
+    <string name="activity_scoreboard_title" translatable="false">@string/scoreboard</string>
     <string name="activity_main_title" translatable="false">@string/app_name</string>
     <string name="activity_difficulty_title">Choose Your Difficulty</string>
     <string name="activity_game_title" translatable="false">@string/app_name</string>
@@ -28,7 +29,16 @@
     <string name="game_player_name_won_turn">%s won this turn</string>
     <string name="game_tie_turn">Gave tie!</string>
 
+    <string name="game_empty_score">Nobody got scores on this match!</string>
+
     <string name="game_db_inserted">This game was saved on scoreboard</string>
+    <string name="game_db_deleted">The score was deleted from scoreboard</string>
+
+    <string name="scoreboard_empty_title">Nothing here yet</string>
+    <string name="scoreboard_empty_message">Your scoreboards will be showing here!</string>
+
+    <string name="alert_delete_score_title">Delete score</string>
+    <string name="alert_delete_score_message">This score will be deleted.\nPress [delete] to continue</string>
 
     <string name="scoreboard">Score Board</string>
     <string name="settings">Settings</string>
@@ -42,4 +52,11 @@
     <string name="opponent">Opponent</string>
     <string name="ok" translatable="false">Ok</string>
     <string name="machine">Machine</string>
+    <string name="player" translatable="false">Player</string>
+    <string name="player1" translatable="false">Player 1</string>
+    <string name="player2" translatable="false">Player 2</string>
+    <string name="delete">Delete</string>
+    <string name="cancel">Cancel</string>
+    
+    <string name="func_in_dev">Functionality in Development</string>
 </resources>

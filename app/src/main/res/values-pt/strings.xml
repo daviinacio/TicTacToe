@@ -23,7 +23,16 @@
     <string name="game_player_name_won_turn">%s ganhou a rodada</string>
     <string name="game_tie_turn">Deu velha!</string>
 
+    <string name="game_empty_score">Ninguém acumulou pontos nessa partida!</string>
+
     <string name="game_db_inserted">Essa partida foi salva na tabela de placares</string>
+    <string name="game_db_deleted">Essa partida foi removida da tabela de placares</string>
+
+    <string name="scoreboard_empty_title">Nada por aqui ainda</string>
+    <string name="scoreboard_empty_message">Seus placares serão mostrados aqui!</string>
+
+    <string name="alert_delete_score_title">Deletar partida</string>
+    <string name="alert_delete_score_message">Essa partida será removida dos placares.\nPressione [Deletar] para continuar</string>
 
     <string name="scoreboard">Placares</string>
     <string name="settings">Configurações</string>
@@ -36,4 +45,9 @@
     <string name="tie">Empate</string>
     <string name="opponent">Oponente</string>
     <string name="machine">Máquina</string>
+
+    <string name="delete">Deletar</string>
+    <string name="cancel">Cancelar</string>
+
+    <string name="func_in_dev">Função em Desenvolvimento</string>
 </resources>

@@ -41,7 +41,7 @@
 
     <style name="AppTheme_Button_Tiles" parent="Widget.AppCompat.Button">
         <item name="android:background">@color/white</item>
-        <item name="android:layout_margin">@dimen/game_time_margin</item>
+        <item name="android:layout_margin">@dimen/game_tile_margin</item>
         <item name="android:textSize">60dp</item>
 
     </style>

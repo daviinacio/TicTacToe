@@ -34,6 +34,7 @@ public class ScoreboardDAO extends DataSet<ScoreBoard> {
             values.put(core.columns[3], item.getTie());
             values.put(core.columns[4], timeFormat.format(item.getDate()));
             values.put(core.columns[5], item.getDuringTime());
+            values.put(core.columns[6], item.getDifficulty());
 
             db.insert(Core.DB_NAME, null, values);
 
@@ -63,6 +64,7 @@ public class ScoreboardDAO extends DataSet<ScoreBoard> {
             values.put(core.columns[3], item.getTie());
             values.put(core.columns[4], timeFormat.format(item.getDate()));
             values.put(core.columns[5], item.getDuringTime());
+            values.put(core.columns[6], item.getDifficulty());
 
             db.update(Core.DB_NAME, values, "id = ?", new String[]{ Integer.toString(item.getId()) });
 
@@ -110,6 +112,7 @@ public class ScoreboardDAO extends DataSet<ScoreBoard> {
                 item.setTie(c.getInt(3));
                 item.setDate(timeFormat.parse(c.getString(4)));
                 item.setDuringTime(c.getLong(5));
+                item.setDifficulty(c.getInt(6));
 
                 result.add(item);
             }
@@ -128,9 +131,9 @@ public class ScoreboardDAO extends DataSet<ScoreBoard> {
 
     protected class Core extends SQLiteOpenHelper {
         static final String DB_NAME = "scoreboard";
-        private static final int DB_VERSION = 1;
+        private static final int DB_VERSION = 2;
 
-        String [] columns = { "id", "score1", "score2", "tie", "date", "duringTime" };
+        String [] columns = { "id", "score1", "score2", "tie", "date", "duringTime", "difficulty" };
 
         protected Context context;
 
@@ -148,7 +151,8 @@ public class ScoreboardDAO extends DataSet<ScoreBoard> {
                         "score2 INTEGER NOT NULL," +
                         "tie INTEGER NOT NULL," +
                         "date DATETIME DEFAULT current_timestamp," +
-                        "duringTime LONG DEFAULT 0" +
+                        "duringTime LONG DEFAULT 0," +
+                        "difficulty INTEGER DEFAULT " + ScoreBoard.DIFF_PVP +
                         ");");
             } catch (SQLException ex) {
                 ErrorDialog.show(context, Core.class, ex, null);

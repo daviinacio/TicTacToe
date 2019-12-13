@@ -10,7 +10,7 @@
         android:id="@+id/appbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingBottom="10dp">
+        android:paddingBottom="5dp">
 
         <android.support.v7.widget.Toolbar
             android:id="@+id/toolbar"
@@ -31,15 +31,14 @@
                 android:id="@+id/tv_score_player"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="8dp"
+                android:includeFontPadding="false"
                 android:text="0"
                 android:textColor="@color/white"
                 android:textSize="90sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toStartOf="@+id/tv_score_tie"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.0" />
+                app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
                 android:id="@+id/label_score_player"
@@ -57,7 +56,7 @@
                 android:id="@+id/tv_score_tie"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="8dp"
+                android:includeFontPadding="false"
                 android:text="0"
                 android:textColor="@color/white"
                 android:textSize="90sp"
@@ -84,7 +83,7 @@
                 android:id="@+id/tv_score_player2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="8dp"
+                android:includeFontPadding="false"
                 android:text="0"
                 android:textColor="@color/white"
                 android:textSize="90sp"
@@ -122,22 +121,36 @@
             android:gravity="center"
             android:orientation="vertical">
 
+            <android.support.constraint.Guideline
+                android:id="@+id/guideline1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.94" />
+
+            <android.support.constraint.Guideline
+                android:id="@+id/guideline2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.06" />
+
             <LinearLayout
-                android:id="@+id/linearLayout2"
-                android:layout_width="300dp"
-                android:layout_height="300dp"
+                android:id="@+id/ll_tiles_container"
+                android:layout_width="@dimen/game_tile_width_height"
+                android:layout_height="@dimen/game_tile_width_height"
                 android:layout_marginStart="8dp"
                 android:layout_marginLeft="8dp"
+                android:layout_marginTop="8dp"
                 android:layout_marginEnd="8dp"
                 android:layout_marginRight="8dp"
                 android:layout_marginBottom="8dp"
                 android:background="@color/colorAccent"
                 android:orientation="vertical"
-                android:padding="@dimen/game_time_margin"
+                android:padding="@dimen/game_tile_margin"
                 app:layout_constraintBottom_toTopOf="@+id/adView"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.5"
-                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/guideline1"
+                app:layout_constraintStart_toStartOf="@+id/guideline2"
                 app:layout_constraintTop_toBottomOf="@+id/tv_game_status">
 
                 <LinearLayout
@@ -258,12 +271,12 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
                 android:layout_marginLeft="8dp"
+                android:layout_marginTop="8dp"
                 android:layout_marginEnd="8dp"
                 android:layout_marginRight="8dp"
                 android:text="Status"
                 android:textColor="@color/colorAccent"
                 android:textSize="25sp"
-                app:layout_constraintBottom_toTopOf="@+id/linearLayout2"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />

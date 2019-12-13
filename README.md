@@ -27,7 +27,7 @@ puzzel ou players.
     - Implementação das Activities
         - [x] MainActivity
         - [x] DifficultyActivity
-        - [ ] ScoreboardActivity
+        - [x] ScoreboardActivity
         - [x] GameActivity
     - [ ] Implementar lógica de dificuldade
     - Images vetoriais

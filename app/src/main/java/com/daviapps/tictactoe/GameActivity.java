@@ -1,22 +1,20 @@
 package com.daviapps.tictactoe;
 
 import android.annotation.SuppressLint;
-import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.widget.Button;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.daviapps.tictactoe.database.DataSet;
 import com.daviapps.tictactoe.database.ScoreboardDAO;
 import com.daviapps.tictactoe.domain.ScoreBoard;
+import com.daviapps.tictactoe.util.Admob;
 import com.google.android.gms.ads.AdListener;
-import com.google.android.gms.ads.AdRequest;
-import com.google.android.gms.ads.AdView;
-import com.google.android.gms.ads.MobileAds;
 
 import java.util.Random;
 
@@ -24,6 +22,8 @@ public class GameActivity extends AppCompatActivity implements ScoreBoard.Observ
     private Button [][] btn_array;
 
     private TextView tvScore1, tvScore2, tvScoreTie, tvScore1Label, tvScore2Label, tvGameStatus;
+
+    private LinearLayout llTilesContainer;
 
     private boolean roundSide = false; // true: player1, false: player2
 
@@ -69,38 +69,17 @@ public class GameActivity extends AppCompatActivity implements ScoreBoard.Observ
         this.tvScore1Label = findViewById(R.id.label_score_player);
         this.tvScore2Label = findViewById(R.id.label_score_player2);
         this.tvGameStatus = findViewById(R.id.tv_game_status);
+        this.llTilesContainer = findViewById(R.id.ll_tiles_container);
 
         /*	*	*	*	  AdMob    *   Admob   *  Admob 	*	*	*	*/
 
-        MobileAds.initialize(this, getString(R.string.admob_app_id));
-
-        AdView adView = findViewById(R.id.adView);
-
-        adView.setAdListener(new AdListener(){
-            @Override
-            public void onAdLoaded(){
-                //Toast.makeText(MainActivity.this, "Admob: loaded", Toast.LENGTH_SHORT).show();
-            }
-
-            @Override
-            public void onAdFailedToLoad(int p1){
-                //Toast.makeText(MainActivity.this, "AdMob: Fail to load (" + p1 + ")", Toast.LENGTH_SHORT).show();
-            }
-        });
-
-        AdRequest adRequest = new AdRequest.Builder()
-                .addTestDevice(AdRequest.DEVICE_ID_EMULATOR)
-                .addTestDevice("A4DDF5EC5E81FE0D117CA05BA164E8B8") // LG K10
-                .addTestDevice("B32DF5960E16B6E638F0861FB8E63372") // LG G6
-                .build();
-
-        adView.loadAd(adRequest);
+        Admob.request(this, findViewById(R.id.adView), new AdListener(){});
 
 
         this.score = new ScoreBoard();
         this.score.addObserver(this);
 
-        this.score.setDifficulty(getIntent().getIntExtra("difficulty", 0x00));
+        this.score.setDifficulty(getIntent().getIntExtra("difficulty", ScoreBoard.DIFF_PVP));
 
         this.tvScore2Label.setText(this.score.getDifficulty() == ScoreBoard.DIFF_PVP ?
                 R.string.opponent : R.string.machine);
@@ -306,9 +285,12 @@ public class GameActivity extends AppCompatActivity implements ScoreBoard.Observ
     }
 
     private void finishGame(){
+        if(score.isEmpty()){
+            Toast.makeText(this, R.string.game_empty_score, Toast.LENGTH_SHORT).show();
+        }
+        else
         if(this.score != null){
             this.db.insert(this.score);
-
             Toast.makeText(this, R.string.game_db_inserted, Toast.LENGTH_SHORT).show();
         }
     }

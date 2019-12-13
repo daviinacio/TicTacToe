@@ -5,7 +5,7 @@ import java.util.List;
 
 // Created by daviinacio on 26/11/2019.
 public abstract class DataSet<T extends Object> {
-    public static SimpleDateFormat timeFormat = new SimpleDateFormat("dd-MM-yyyy");
+    public static SimpleDateFormat timeFormat = new SimpleDateFormat("dd-MM-yyyy HH:mm");
 
     public abstract T insert(T item);
     public abstract T update(T item);

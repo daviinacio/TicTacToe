@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ScoreboardActivity">
+
+    <ListView
+        android:id="@+id/listview_scoreboard"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/adView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+    </ListView>
+
+    <TextView
+        android:id="@+id/tv_empty_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/scoreboard_empty_title"
+        android:textColor="#202020"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toBottomOf="@+id/listview_scoreboard"
+        app:layout_constraintEnd_toEndOf="@+id/listview_scoreboard"
+        app:layout_constraintStart_toStartOf="@+id/listview_scoreboard"
+        app:layout_constraintTop_toTopOf="@+id/listview_scoreboard"
+        app:layout_constraintVertical_bias="0.48000002" />
+
+    <TextView
+        android:id="@+id/tv_empty_message"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:shadowColor="#707070"
+        android:text="@string/scoreboard_empty_message"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="@+id/tv_empty_title"
+        app:layout_constraintStart_toStartOf="@+id/tv_empty_title"
+        app:layout_constraintTop_toBottomOf="@+id/tv_empty_title" />
+
+    <com.google.android.gms.ads.AdView
+        android:id="@+id/adView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        app:adSize="BANNER"
+        app:adUnitId="ca-app-pub-1507172442893539/6239458147"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+    </com.google.android.gms.ads.AdView>
+</android.support.constraint.ConstraintLayout>

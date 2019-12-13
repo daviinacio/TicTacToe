@@ -90,6 +90,10 @@ public class ScoreBoard {
         this.duringTime = duringTime;
     }
 
+    public  boolean isEmpty(){
+        return score1 == score2 && score2 == tie && tie == 0;
+    }
+
     // Observer
     private void handleObserver(){
         for(Observer observer : this.observers){
