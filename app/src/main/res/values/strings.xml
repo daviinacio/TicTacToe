@@ -1,6 +1,6 @@
 <resources>
     <string name="app_name">Tic Tac Toe</string>
-    <string name="app_version" translatable="false">0.1</string>
+    <string name="app_version" translatable="false">1.1</string>
     <string name="app_copyright">created by daviinacio</string>
 
     <string name="admob_app_id" translatable="false">ca-app-pub-1507172442893539~8560684941</string>
@@ -21,6 +21,7 @@
     <string name="game_player2_turn">Player2 turn</string>
     <string name="game_player_name_turn">%s turn</string>
 
+    <string name="game_init_wait">Wait for your turn</string>
 
     <string name="game_you_won_turn">You won this turn</string>
     <string name="game_machine_won_turn">Machine won this turn</string>

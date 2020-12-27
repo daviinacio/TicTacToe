@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".DifficultyActivity">
+    tools:context=".activities.DifficultyActivity">
 
     <Button
         android:id="@+id/btn_back"
@@ -47,10 +47,11 @@
         android:layout_width="0dp"
         android:onClick="chooseDifficult"
         android:text="@string/hard"
+        android:enabled="false"
         app:layout_constraintBottom_toTopOf="@+id/btn_back"
         app:layout_constraintEnd_toStartOf="@+id/guideline5"
         app:layout_constraintStart_toStartOf="@+id/guideline2"
-        app:layout_constraintTop_toBottomOf="@+id/btn_diff_medium" />
+        app:layout_constraintTop_toBottomOf="@+id/btn_diff_medium"/>
 
     <android.support.constraint.Guideline
         android:id="@+id/guideline2"

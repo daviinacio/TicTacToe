@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="80dp">
+    android:layout_height="85dp">
 
     <ImageView
         android:id="@+id/imageView2"
@@ -111,7 +111,7 @@
         android:layout_marginBottom="2dp"
         android:text="12/12/2019 16h00"
         android:textColor="#C1C1C1"
-        android:textSize="8dp"
+        android:textSize="12sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/guideline3" />
