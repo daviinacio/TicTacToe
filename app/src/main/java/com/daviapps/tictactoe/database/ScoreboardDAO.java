@@ -39,8 +39,7 @@ public class ScoreboardDAO extends DataSet<ScoreBoard> {
             db.insert(Core.DB_NAME, null, values);
 
             // Return the inserted item with id
-            List<ScoreBoard> result = this.select("1 = 1", null);
-            item = result.get(result.size() - 1);
+            item = this.select(String.format("id = (SELECT max(id) FROM %s)", Core.DB_NAME)).get(0);
         }
         catch (SQLiteException | NullPointerException ex) {
             ErrorDialog.show(core.context, ScoreboardDAO.class, ex, null);
@@ -55,6 +54,10 @@ public class ScoreboardDAO extends DataSet<ScoreBoard> {
 
     @Override
     public ScoreBoard update(ScoreBoard item) {
+        // Insert if not exists
+        if(item.getId() == 0) return this.insert(item);
+
+        // Update if exists
         SQLiteDatabase db = core.getWritableDatabase();
 
         try {

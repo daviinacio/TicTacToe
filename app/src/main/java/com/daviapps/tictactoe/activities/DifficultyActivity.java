@@ -1,4 +1,4 @@
-package com.daviapps.tictactoe;
+package com.daviapps.tictactoe.activities;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 
+import com.daviapps.tictactoe.R;
 import com.daviapps.tictactoe.domain.ScoreBoard;
 import com.daviapps.tictactoe.util.Admob;
 import com.google.android.gms.ads.AdListener;
@@ -18,8 +19,12 @@ public class DifficultyActivity extends AppCompatActivity {
         setContentView(R.layout.activity_difficulty);
 
         /*	*	*	*	  AdMob    *   Admob   *  Admob 	*	*	*	*/
-
         Admob.request(this, findViewById(R.id.adView), new AdListener(){});
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
     }
 
     public void chooseDifficult(View v){

@@ -9,6 +9,7 @@
     <color name="dark_gray">#707070</color>
 
     <color name="tile_default_color">#222</color>
-    <color name="tile_pl_win_color">#2E612E</color>
-    <color name="tile_p2_win_color">#612E2E</color>
+    <color name="tile_tie_color">#B9AC0C</color>
+    <color name="tile_pl_win_color">#307C30</color>
+    <color name="tile_p2_win_color">#AD2323</color>
 </resources>

@@ -1,22 +1,15 @@
-package com.daviapps.tictactoe;
+package com.daviapps.tictactoe.activities;
 
 import android.content.Intent;
-import android.os.Build;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.transition.Explode;
-import android.transition.Slide;
-import android.view.View;
-import android.view.Window;
 import android.widget.Button;
 import android.widget.Toast;
 
+import com.daviapps.tictactoe.R;
 import com.daviapps.tictactoe.domain.ScoreBoard;
 import com.daviapps.tictactoe.util.Admob;
 import com.google.android.gms.ads.AdListener;
-import com.google.android.gms.ads.AdRequest;
-import com.google.android.gms.ads.AdView;
-import com.google.android.gms.ads.MobileAds;
 
 public class MainActivity extends AppCompatActivity {
 
