@@ -1,4 +1,4 @@
-package com.daviapps.tictactoe;
+package com.daviapps.tictactoe.activities;
 
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
@@ -9,6 +9,7 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.daviapps.tictactoe.R;
 import com.daviapps.tictactoe.adapter.ScoreboardAdapter;
 import com.daviapps.tictactoe.util.Admob;
 import com.google.android.gms.ads.AdListener;

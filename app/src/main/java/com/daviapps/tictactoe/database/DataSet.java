@@ -18,6 +18,10 @@ public abstract class DataSet<T extends Object> {
 
     public abstract List<T> select(String where, String order);
 
+    public List<T> select(String where){
+        return this.select(where, null);
+    }
+
     public List<T> select(String key, String value, String order){
         return this.select(String.format("%s =  %s", key, value), "");
     }
