@@ -295,7 +295,7 @@ public class GameActivity extends AppCompatActivity implements ScoreBoard.Observ
 
         for (Position p : positions){
             Button btn = this.btnArray[p.getX()][p.getY()];
-
+          
             runOnUiThread(() ->
                     btn.setTextColor(getResources().getColor(highlightColors[winner])));
         }
