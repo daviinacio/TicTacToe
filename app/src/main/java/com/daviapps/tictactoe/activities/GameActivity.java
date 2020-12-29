@@ -274,15 +274,19 @@ public class GameActivity extends AppCompatActivity implements ScoreBoard.Observ
                 for (int y = 0; y < this.btnArray[x].length; y++) {
                     Button btn = this.btnArray[x][y];
 
-                    btn.setText(Character.toString(label[virtualField[x][y]]));
-                    btn.setTextColor(getResources()
-                            .getColor(R.color.tile_default_color));
+                    final char value = label[virtualField[x][y]];
+
+                    runOnUiThread(() -> {
+                        btn.setText(Character.toString(value));
+                        btn.setTextColor(getResources()
+                                .getColor(R.color.tile_default_color));
+                    });
                 }
             }
         }
     }
 
-    private void highlightPositions(List<Position> positions, int winner){
+    private void highlightPositions(List<Position> positions, final int winner){
         int [] highlightColors = new int[]{
                 R.color.tile_tie_color,
                 R.color.tile_pl_win_color,
@@ -291,7 +295,9 @@ public class GameActivity extends AppCompatActivity implements ScoreBoard.Observ
 
         for (Position p : positions){
             Button btn = this.btnArray[p.getX()][p.getY()];
-            btn.setTextColor(getResources().getColor(highlightColors[winner]));
+
+            runOnUiThread(() ->
+                    btn.setTextColor(getResources().getColor(highlightColors[winner])));
         }
     }
 
