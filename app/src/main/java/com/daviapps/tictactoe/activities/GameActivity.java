@@ -22,8 +22,6 @@ import com.daviapps.tictactoe.domain.Position;
 import com.daviapps.tictactoe.database.DataSet;
 import com.daviapps.tictactoe.database.ScoreboardDAO;
 import com.daviapps.tictactoe.domain.ScoreBoard;
-import com.daviapps.tictactoe.util.Admob;
-import com.google.android.gms.ads.AdListener;
 
 import java.util.List;
 import java.util.Objects;
@@ -69,9 +67,6 @@ public class GameActivity extends AppCompatActivity implements ScoreBoard.Observ
 
         // Database
         this.db = new ScoreboardDAO(this);
-
-        // Advertising
-        Admob.request(this, findViewById(R.id.adView), new AdListener(){});
 
         // Game values
         this.game = new Game(3);

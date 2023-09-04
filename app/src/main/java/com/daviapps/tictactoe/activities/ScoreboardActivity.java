@@ -12,7 +12,6 @@ import android.widget.Toast;
 import com.daviapps.tictactoe.R;
 import com.daviapps.tictactoe.adapter.ScoreboardAdapter;
 import com.daviapps.tictactoe.util.Admob;
-import com.google.android.gms.ads.AdListener;
 
 public class ScoreboardActivity extends AppCompatActivity {
     private ListView lvScoreboard;
@@ -28,10 +27,6 @@ public class ScoreboardActivity extends AppCompatActivity {
         this.tvEmptyMessage = findViewById(R.id.tv_empty_message);
         this.lvScoreboard = findViewById(R.id.listview_scoreboard);
         this.adapter = new ScoreboardAdapter(this);
-
-        /*	*	*	*	  AdMob    *   Admob   *  Admob 	*	*	*	*/
-
-        Admob.request(this, findViewById(R.id.adView), new AdListener(){});
 
         this.adapter.setOnLoadListener(items -> {
             this.tvEmptyTitle.setVisibility(items.size() == 0 ? View.VISIBLE : View.GONE);
