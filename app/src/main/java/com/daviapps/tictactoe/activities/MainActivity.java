@@ -8,8 +8,6 @@ import android.widget.Toast;
 
 import com.daviapps.tictactoe.R;
 import com.daviapps.tictactoe.domain.ScoreBoard;
-import com.daviapps.tictactoe.util.Admob;
-import com.google.android.gms.ads.AdListener;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -29,20 +27,6 @@ public class MainActivity extends AppCompatActivity {
         this.btn_pvp = findViewById(R.id.btn_player_vs_player);
         this.btn_scoreboard = findViewById(R.id.btn_scoreboard);
         this.btn_settings = findViewById(R.id.btn_settings);
-
-        /*	*	*	*	  AdMob    *   Admob   *  Admob 	*	*	*	*/
-
-        Admob.request(this, findViewById(R.id.adView), new AdListener(){
-            @Override
-            public void onAdLoaded(){
-                //Toast.makeText(MainActivity.this, "Admob: loaded", Toast.LENGTH_SHORT).show();
-            }
-
-            @Override
-            public void onAdFailedToLoad(int p1){
-                //Toast.makeText(MainActivity.this, "AdMob: Fail to load (" + p1 + ")", Toast.LENGTH_SHORT).show();
-            }
-        });
 
         /*	*	*	*	  OnClick   *   OnClick *  OnClick  *	*	*	*/
 

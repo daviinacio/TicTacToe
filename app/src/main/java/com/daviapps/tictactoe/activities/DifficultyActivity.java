@@ -9,7 +9,6 @@ import android.view.View;
 import com.daviapps.tictactoe.R;
 import com.daviapps.tictactoe.domain.ScoreBoard;
 import com.daviapps.tictactoe.util.Admob;
-import com.google.android.gms.ads.AdListener;
 
 public class DifficultyActivity extends AppCompatActivity {
 
@@ -17,9 +16,6 @@ public class DifficultyActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_difficulty);
-
-        /*	*	*	*	  AdMob    *   Admob   *  Admob 	*	*	*	*/
-        Admob.request(this, findViewById(R.id.adView), new AdListener(){});
     }
 
     @Override
