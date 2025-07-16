@@ -154,7 +154,7 @@ public class GameActivity extends AppCompatActivity implements ScoreBoard.Observ
             return true;
         }
         else
-        if(game.findEmptyPositions().isEmpty()){
+        if(game.findEmptyPositions().size() <= 1){
             this.highlightPositions(this.game.getAllPositions(), 0);
             this.score.incrementTie();
 

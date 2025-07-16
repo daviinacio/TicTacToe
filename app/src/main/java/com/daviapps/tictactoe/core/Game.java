@@ -25,7 +25,7 @@ public class Game {
         this.field = field;
     }
     public Game(int length){
-        this(new int[length > 3 ? length : 3][length > 3 ? length : 3]);
+        this(new int[length][length]);
     }
     public Game(){
         this(3);
@@ -69,9 +69,8 @@ public class Game {
                         s.add(this.field[pos.getX()][pos.getY()]);
                     }
                 }
-                else
                 // Check diagonal
-                if(m == 2 || m == 3){
+                else {
                     for(int i = 0; i < this.field.length; i++){
                         Position pos = new Position(i, m == 2 ? i : (this.field[i].length -1) - i);
                         positions.add(pos);
